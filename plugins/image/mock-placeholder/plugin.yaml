@@ -1,0 +1,31 @@
+id: mock-placeholder
+kind: image
+display_name: "Mock Placeholder (test double — no model)"
+version: 0.1.0
+backend: mock
+license: "n/a — test double, generates procedural placeholder PNGs"
+
+requirements:
+  min_vram_gb: 0
+  recommended_vram_gb: 0
+  system_ram_gb: 1
+  download_gb: 0
+  files: []
+
+capabilities:
+  txt2img: true
+  img2img: true
+  inpaint: false
+  native_edit: false
+  reference_images: none
+  max_reference_images: 0
+  character_consistency: weak
+  room_edit_consistency: weak
+  controlnet: []
+  negative_prompt: false
+  seed_reproducible: true
+
+native:
+  resolution: [320, 180]
+  steps: 1
+  cfg: 0.0

@@ -1,0 +1,36 @@
+id: qwen3-8b-ollama
+kind: text
+display_name: "Qwen3 8B via Ollama"
+version: 0.1.0
+backend: openai_compatible
+license: "Apache-2.0 (model weights)"
+
+# Declarative text plugin: no code. Core talks to any
+# OpenAI-compatible local endpoint; this manifest + template are
+# the whole plugin.
+endpoint: "http://127.0.0.1:11434/v1"
+model: "qwen3:8b-q4_K_M"
+context_tokens: 8192
+supports_json_mode: true
+template: narrate.jinja
+
+requirements:
+  min_vram_gb: 5
+  recommended_vram_gb: 6
+  system_ram_gb: 16
+  download_gb: 4.7
+  files:
+    - { path: "qwen3:8b-q4_K_M (pulled by Ollama)", sha256: null, url: null }
+
+capabilities:
+  txt2img: false
+  img2img: false
+  inpaint: false
+  native_edit: false
+  reference_images: none
+  max_reference_images: 0
+  character_consistency: weak
+  room_edit_consistency: weak
+  controlnet: []
+  negative_prompt: false
+  seed_reproducible: false

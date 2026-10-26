@@ -1,0 +1,35 @@
+id: z-image-turbo-gguf
+kind: image
+display_name: "Z-Image Turbo (GGUF)"
+version: 0.1.0
+backend: gguf
+license: "Apache-2.0"
+
+requirements:
+  min_vram_gb: 6
+  recommended_vram_gb: 8
+  system_ram_gb: 16
+  download_gb: 6.5
+  files:
+    # TODO: pin the exact GGUF quant + hashes when the runner is wired.
+    - { path: "z-image-turbo-Q4_K_M.gguf", sha256: null, url: null }
+    - { path: "qwen_3_4b.safetensors", sha256: null, url: null }
+    - { path: "ae.safetensors", sha256: null, url: null }
+
+capabilities:
+  txt2img: true
+  img2img: true
+  inpaint: false
+  native_edit: false
+  reference_images: none
+  max_reference_images: 0
+  character_consistency: weak
+  room_edit_consistency: medium
+  controlnet: []
+  negative_prompt: false
+  seed_reproducible: true
+
+native:
+  resolution: [1024, 1024]
+  steps: 8
+  cfg: 1.0

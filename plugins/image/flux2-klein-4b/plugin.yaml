@@ -1,0 +1,35 @@
+id: flux2-klein-4b
+kind: image
+display_name: "FLUX.2 Klein 4B"
+version: 0.1.0
+backend: comfyui
+license: "Apache-2.0 (4B variant)"
+
+requirements:
+  min_vram_gb: 8
+  recommended_vram_gb: 13
+  system_ram_gb: 16
+  download_gb: 11
+  files:
+    # TODO: pin exact files + hashes when the runner is wired.
+    - { path: "flux2-klein-4b.safetensors", sha256: null, url: null }
+    - { path: "qwen_3_4b.safetensors", sha256: null, url: null }
+    - { path: "ae.safetensors", sha256: null, url: null }
+
+capabilities:
+  txt2img: true
+  img2img: true
+  inpaint: false
+  native_edit: true
+  reference_images: native_multi_ref
+  max_reference_images: 10
+  character_consistency: medium
+  room_edit_consistency: strong
+  controlnet: []
+  negative_prompt: false
+  seed_reproducible: true
+
+native:
+  resolution: [1024, 1024]
+  steps: 4
+  cfg: 1.0

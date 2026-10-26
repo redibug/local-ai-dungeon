@@ -1,0 +1,26 @@
+id: mock-echo
+kind: text
+display_name: "Mock Echo (test double — no model)"
+version: 0.1.0
+backend: mock
+license: "n/a — test double"
+
+requirements:
+  min_vram_gb: 0
+  recommended_vram_gb: 0
+  system_ram_gb: 1
+  download_gb: 0
+  files: []
+
+capabilities:
+  txt2img: false
+  img2img: false
+  inpaint: false
+  native_edit: false
+  reference_images: none
+  max_reference_images: 0
+  character_consistency: weak
+  room_edit_consistency: weak
+  controlnet: []
+  negative_prompt: false
+  seed_reproducible: true

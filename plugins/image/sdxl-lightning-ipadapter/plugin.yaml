@@ -1,0 +1,36 @@
+id: sdxl-lightning-ipadapter
+kind: image
+display_name: "SDXL Lightning + IP-Adapter (fantasy)"
+version: 1.0.0
+backend: comfyui
+license: "CreativeML Open RAIL++-M (checkpoint-dependent — check your checkpoint)"
+
+requirements:
+  min_vram_gb: 6
+  recommended_vram_gb: 8
+  system_ram_gb: 16
+  download_gb: 7.5
+  files:
+    # sha256/url are TODO: fill in when a checkpoint is pinned. Core must
+    # verify hashes before trusting a download — do not invent them here.
+    - { path: "checkpoints/SET_ME_lightning_checkpoint.safetensors", sha256: null, url: null }
+    - { path: "ipadapter/ip-adapter-plus_sdxl_vit-h.safetensors", sha256: null, url: null }
+    - { path: "clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors", sha256: null, url: null }
+
+capabilities:
+  txt2img: true
+  img2img: true
+  inpaint: true
+  native_edit: false
+  reference_images: ip_adapter
+  max_reference_images: 2
+  character_consistency: strong
+  room_edit_consistency: strong
+  controlnet: [depth, canny]
+  negative_prompt: true
+  seed_reproducible: true
+
+native:
+  resolution: [1024, 1024]
+  steps: 6
+  cfg: 1.5
